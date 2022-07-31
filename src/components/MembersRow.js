@@ -1,6 +1,12 @@
 import React, { useEffect, useState } from "react";
 import "./MembersTable.css";
-import { faEdit, faTrash } from "@fortawesome/free-solid-svg-icons";
+import {
+  faEdit,
+  faTrash,
+  faSave,
+  faUndo,
+  faSearch,
+} from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 const MemberRow = ({
@@ -37,12 +43,6 @@ const MemberRow = ({
     }
   };
 
-  const handleCancel = () => {
-    setEditedValues(initialValues);
-    setEditMode(false);
-    onClickEdit(null);
-  };
-
   const handleSave = () => {
     onRowEdit(editedValues);
     setEditMode(false);
@@ -51,6 +51,12 @@ const MemberRow = ({
 
   const handleEditMode = () => {
     onClickEdit(row.id);
+  };
+
+  const handleUndo = () => {
+    setEditedValues(initialValues);
+    setEditMode(false);
+    onClickEdit(null);
   };
 
   return (
@@ -102,14 +108,24 @@ const MemberRow = ({
         <div className="actions">
           {editMode ? (
             <>
-              <span className="material-icons action-icon" onClick={handleSave}>
-                Save
-              </span>
-              <span
-                className="material-icons action-icon"
-                onClick={handleCancel}>
-                Close
-              </span>
+              <FontAwesomeIcon
+                icon={faSave}
+                color="blue"
+                style={{
+                  marginLeft: "3rem",
+                  marginRight: "2rem",
+                  cursor: "pointer",
+                }}
+                onClick={handleSave}
+              />
+              <FontAwesomeIcon
+                icon={faUndo}
+                color="green"
+                style={{
+                  cursor: "pointer",
+                }}
+                onClick={handleUndo}
+              />
             </>
           ) : (
             <>

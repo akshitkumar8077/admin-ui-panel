@@ -3,7 +3,6 @@ import axios from "axios";
 import "./App.css";
 import MembersTable from "./components/MembersTable";
 import noData from "./assets/No_data.png";
-import { faSearch } from "@fortawesome/free-solid-svg-icons";
 
 function App() {
   const [members, setMembers] = useState(null);

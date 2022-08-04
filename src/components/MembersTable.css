@@ -7,9 +7,10 @@
 
 table {
   border-spacing: 0;
-  background-color: #d0d0d0;
+  background-color: #ffffff;
   width: 100%;
   border-radius: 10px;
+  border: 2px solid #000;
 }
 
 td,
@@ -18,6 +19,7 @@ th {
   padding: 0.5rem;
   border-bottom: 1px solid #e6e6e6;
   text-align: left;
+  border: 1px solid #000;
 }
 
 th .data {
@@ -26,11 +28,10 @@ th .data {
 }
 
 tr.selected {
-  background-color: #f7f7f7;
+  background-color: #e0dddd;
 }
 
 .data {
-  border: 1px solid #000000;
   font-family: inherit;
   font-size: 1rem;
   padding: 0.5rem 1rem;
@@ -45,12 +46,14 @@ tr.selected {
 
 .data.view {
   border: 1px solid #000;
-  background-color: #d0d0d0;
+  background-color: #ffffff;
 }
 
 .data.selected {
-  background-color: #ffb1b1;
-  border-color: #f7f7f7;
+  background-color: #ff0000;
+  color: #fff;
+  font-weight: 700;
+  border-color: #000000;
 }
 
 .data.editable {
@@ -77,13 +80,15 @@ tr.selected {
   border: none;
   color: #fff;
   font-size: 1rem;
+  font-weight: 700;
   cursor: pointer;
   height: 2.5rem;
   align-self: center;
 }
 
 .del-btn.disabled {
-  background: #4dff00;
+  background: #1aff00;
+  font-weight: 700;
   color: #000000;
 }
 
